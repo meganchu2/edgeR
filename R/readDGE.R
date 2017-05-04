@@ -27,7 +27,6 @@ readDGE <- function(files,path=NULL,columns=c(1,2),group=NULL,labels=NULL,...)
 		if(!is.null(path)) fn <- file.path(path,fn)
 		d[[fn]] <- read.delim(fn,...,stringsAsFactors=FALSE)
 		taglist[[fn]] <- as.character(d[[fn]][,columns[1]])
-		if(anyDuplicated(taglist[[fn]])) stop("Repeated tag sequences in",fn)
 	}
 
 #	Collate counts for unique tags
